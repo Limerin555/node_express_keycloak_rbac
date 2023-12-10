@@ -22,7 +22,7 @@ app.use(cors());
 
 // Register routes
 app.use('/api', testRoutes);
-// app.use('/api', menuRoutes);
+app.use('/api', menuRoutes);
 app.use(errorHandler);
 
 app.listen(port, () => {

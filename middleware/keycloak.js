@@ -1,5 +1,5 @@
 const Keycloak = require("keycloak-connect");
-require('dotenv').config();
+const dotenv = require('dotenv').config();
 
 const config = {
   "realm": process.env.KEYCLOAK_REALM,
@@ -8,8 +8,6 @@ const config = {
   "resource": process.env.KEYCLOAK_CLIENT,
   "bearer_only": true
 }
-
-console.log(config);
 
 const keycloak = new Keycloak({}, config);
 
