@@ -1,7 +1,7 @@
 require('dotenv').config();
 const cors = require('cors');
 const express = require('express');
-const keycloak = require('#middleware/keycloak'); // Keycloak
+const keycloak = require('#middlewares/keycloak'); // Keycloak
 
 const port = process.env.PORT;
 

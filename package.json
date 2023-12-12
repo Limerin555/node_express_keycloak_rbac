@@ -19,6 +19,6 @@
   },
   "imports": {
     "#routes/*": "./routes/*.js",
-    "#middleware/*": "./middleware/*.js"
+    "#middlewares/*": "./middlewares/*.js"
   }
 }

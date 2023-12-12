@@ -9,7 +9,7 @@ module.exports = async (req, res, next) => {
       next();
     } else {
       // Throw error if user is not an admin
-      const error = new Error("You do not have permission to access this.");
+      const error = new Error("Access Denied: You do not have permission to access this.");
       error.statusCode = 401;
       throw error;
     }
