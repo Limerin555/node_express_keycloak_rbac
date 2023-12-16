@@ -41,7 +41,7 @@ const menuItems = [
 ];
 
 // Route open to any role
-router.get("/menu", 
+router.get("/menu-items", 
 [keycloak.protect()],
 async ( req, res, next) => {
   try {
@@ -50,6 +50,8 @@ async ( req, res, next) => {
         return item;
       }
     });
+
+    // Return filtered data
     res.json(filtered);
   } catch (error) {
     return next(error);
@@ -57,10 +59,11 @@ async ( req, res, next) => {
 });
 
 // Route restricted to Admin role only
-router.get("/menu/all", 
+router.get("/menu-items/all", 
 [keycloak.protect(), extractTokenData, checkIfAdmin],
 async ( req, res, next) => {
   try {
+    // Return all data
     res.json(menuItems);
   } catch (error) {
     return next(error);

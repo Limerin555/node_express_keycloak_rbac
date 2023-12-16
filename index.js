@@ -7,7 +7,7 @@ const port = process.env.PORT;
 
 // Routes
 const testRoutes = require('#routes/test');
-const menuRoutes = require('#routes/menu');
+const menuItemsRoutes = require('#routes/menuItems');
 
 const errorHandler = (error, req, res, next) => {
   const status = error.status || 422;
@@ -22,7 +22,7 @@ app.use(cors());
 
 // Register routes
 app.use('/api', testRoutes);
-app.use('/api', menuRoutes);
+app.use('/api', menuItemsRoutes);
 app.use(errorHandler);
 
 app.listen(port, () => {
