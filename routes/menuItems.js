@@ -3,7 +3,7 @@ const router =  express.Router();
 
 // Middleware
 const keycloak = require("#middlewares/keycloak");
-const extractTokenData = require("#middlewares/extractTokenData");
+const extractToken = require("#middlewares/extractToken");
 const checkIfAdmin = require("#middlewares/checkIfAdmin");
 
 // Fake Data
@@ -58,9 +58,9 @@ async ( req, res, next) => {
   }
 });
 
-// Route restricted to Admin role only
+// Route restricted to admin role only
 router.get("/menu-items/all", 
-[keycloak.protect(), extractTokenData, checkIfAdmin],
+[keycloak.protect(), extractToken, checkIfAdmin],
 async ( req, res, next) => {
   try {
     // Return all data
